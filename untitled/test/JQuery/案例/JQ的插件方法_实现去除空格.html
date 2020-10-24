@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>封装全局函数插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script	type="text/javascript">
+        //插件编写
+        // 1.(text||"")部分是用于防止传递进来的text这个字符串变量处于未定义的特殊状态，如果text是undeined，则返回字符串""，否则返回字符串text。这个处理是为了保证接下来的字符串替换方法replace()方法不会出错。
+        // 2.运用了正则表达式替换首末的空格。
+        ;(function($) {
+            $.extend({
+                ltrim :	function( text ) {
+                    return (text ||	"").replace( /^\s+/g, "" )
+                },
+                rtrim :	function rtrim(	text ) {
+                    return (text ||	"").replace( /\s+$/g, "" )
+                }
+            });
+        })(jQuery);
+        //插件应用
+        $(function(){
+            $("#trimTest").val(
+                jQuery.trim("       test      ") + "\n" +
+                jQuery.ltrim("       test      ") + "\n" +
+                jQuery.rtrim("       test      ")
+            );
+        })
+    </script>
+</head>
+<body>
+<textarea id="trimTest" rows="5" cols="20"></textarea>
+<p>第一行左右两侧空格被删除</p><br />
+<p>第二行只有左侧空格被删除</p><br />
+<p>第一行只有右侧空格被删除</p>
+</body>
+</html>

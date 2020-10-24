@@ -1,0 +1,62 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{display: block;font-size: 40px;margin: 100px;width: 130px}
+        #msg{width: 600px;height: 150px;background-color: gray;color: white;display: none;position: absolute}
+    </style>
+    <script>
+        // 事件类型
+        //    mouseover;显示提示框
+        //    mouseout:隐藏提示框
+        //    mousemove;提示框跟随鼠标移动
+
+        //         获取当前鼠标位置:（原点位置不一样）
+        //     clientX clientY  原点位置:可视窗口的左上角为原.
+        //      pageY  pageX 原点位置:整个页面的左上角(包含滚出去的滚动距离）
+        //      screenX screenY  原点位置:电脑屏幕的左上角
+
+        var arr=["唐太宗李世民（598年1月28日一649年7月10日渊嫡次子，母为太穆皇后奥氏",
+                 "唐高宗李治(628年7月21日-683年12月27日)[1]，字为善，祖籍胧西成纭",
+                 "武则天发射点发射点发射点发生",
+                 "唐玄宗发射点大师傅十分士大夫胜多负少"];
+        window.onload=function () {
+            var aAs=document.getElementsByTagName("a")
+            var oMsg=document.getElementById("msg")
+
+            for (var i=0;i<aAs.length;i++){
+                aAs[i].index=i;
+                aAs[i]=onmousemove=function () {
+                    alert(this.index);
+                    oMsg.innerHTML=arr[this.index];
+                    oMsg.style.display='block';
+                }
+                aAs[i].onmouseout=function () {
+                    oMsg.style.display='none';
+                }
+                //添加鼠标移动事件
+                aAs[i].onmousemove=function () {
+                    var e=ev||window.event;
+                    oMsg.style.left=e.clientX+5+"px";
+                    oMsg.style.top=e.clientY +5+"px";
+
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+<a href="#">唐太宗</a>
+<a href="#">唐高宗</a>
+<a href="#">武则天</a>
+<a href="#">唐玄宗</a>
+<div id="msg"></div>
+</body>
+</html>

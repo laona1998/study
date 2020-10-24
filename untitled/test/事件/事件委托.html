@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li id="item1">java</li>
+    <li id="item2">Web</li>
+    <li id="item3">python</li>
+</ul>
+<button onclick="addItem()">添加</button>
+</body>
+<script>
+    var Is=document.querySelector('ul')
+
+
+    Is.addEventListener('click',handleMe,false)
+    function handleMe(e) {
+        if (e.target.nodeName=='LI'){
+            showClick(e)
+        }
+    }
+    function showClick(e) {
+            e.target.style.background='red'
+    }
+    function addItem() {
+        Is.innerHTML+='<li>new Item </li>'
+    }
+
+
+
+
+
+</script>
+
+
+</html>

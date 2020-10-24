@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*头部*/
+#header{
+    background-color: blue;
+}
+
+#header h3{
+    text-align: center;
+    color: azure;
+}
+#header img{
+    display: inline-block;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+#header1{
+    color: azure;
+    margin: 30px;
+    position: absolute;
+    top: 27px;
+    left:100px;
+
+}
+/*内容*/
+#body1 span{
+    display: flex;
+    justify-content: space-around;
+}
+
+#body1 div{
+    width: 40px;
+    height: 40px;
+    margin: 50px auto;
+    text-align: center;
+}
+#body1 img{
+    width: 60px;
+    height: 60px;
+}
+
+#body1 input{
+    background-color: darkgrey;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px;
+}
+#body1 input:last-child{
+
+    height: 50px;
+    width: 100%;
+    color: aliceblue;
+    background-color: blue;
+}
+
+/*底部*/
+
+
+  #fotter{
+    color: #8e8e8e;
+}

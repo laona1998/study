@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自定义选择器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script type="text/javascript">
+        //插件编写
+        ;(function($){
+            $.extend(jQuery.expr[":"],{
+                /*
+        　　　　　选择器仅仅是jQuery.expr[":"]对象的一部分，同时也是一个Object对象，因此可以直接利用jQuery.extend()对其扩展
+                a指向当前遍历到的DOM元素
+                i指的是当前遍历到的DOM元素的索引值，从0开始
+                m，由jQuery正则解析引擎进一步解析后的产物（用match匹配出来），是一个数组
+                以$("div:gt(1)")为例：
+                m[0],指:gt(1)
+                m[1]，指":",即冒号。当然并非只能使用“：”后面跟上选择器，用户可以自定义其他的选择引导符
+                m[2]，指gt，确定选择器选择器函数
+                m[3],指数字“1"
+                m[4],如果是div:l(ss(dd))这样一个选择器，m[4]指向(dd)这部分，注意是带括号的(dd)，此时的m[3]的值是ss(dd)而非ss
+                */
+                between:function(a,i,m){
+                    var tmp=m[3].split(",");//将传递进来的m[3]以逗号为分隔符，切成一个数组
+                    return tmp[0]<i&&i<tmp[1];
+                }
+            });
+        })(jQuery);
+        //插件应用
+        $(function(){
+            alert("执行前");
+            $("div:between(2,5)").css("background","white");
+            alert("执行后");
+        })
+    </script>
+</head>
+<body>
+<div style="background:red">0</div>
+<div style="background:blue">1</div>
+<div style="background:green">2</div>
+<div style="background:yellow">3</div>
+<div style="background:gray">4</div>
+<div style="background:orange">5</div>
+</body>
+</html>

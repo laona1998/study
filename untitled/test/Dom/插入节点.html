@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // document.write():会覆盖页面上原有的内容
+
+        // document.createElement(标签名)
+        window.onload=function () {
+            var oBtn=document.getElementById("btn1");
+            var oDiv=document.getElementById("div1");
+            oBtn.onclick=function () {
+                var op=document.createElement("p");//创建节点
+                var oTxt=document.createTextNode("Hello World")//创建文本节点
+
+                op.appendChild(oTxt);//插入到末尾
+                oDiv.appendChild(op);
+
+                //insertBefore():将op节点插入到oDiv节点前
+                // document.body.insertBefore(op,oDiv);
+
+
+                //replaceChild():用op节点将oDiv节点替换掉
+                // document.body.replaceChild(op,oDiv);
+
+                //cloneNode();
+                // var newNode=oDiv.cloneNode(true);
+                // document.body.appendChild(newNode);
+
+                //removeChild();
+                // document.body.removeChild(oDiv);
+            }
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <div id="div1">
+        <em>文本</em>
+        div文本
+        <strong>strong</strong>
+    </div>
+    <button id="btn1">节点操作</button>
+</body>
+</html>

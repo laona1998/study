@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+         div{width: 100px;height: 100px;background-color: orange;position: absolute;}
+    </style>
+
+    <script>
+       /* $.extend() 拓展工具方法$。xxx(）$.yyy()
+        $.fn.extend(） 拓展JQ方法$(）.xxx()$().yyy()
+
+        JQ插件方法，如果我们想要给JQ新增函数，通过上述两个插件方法拓展函数库。*/
+        $.extend({
+            aaa:function () {
+                alert("这是一个工具方法")
+            }
+        })
+
+        $.fn.extend({
+            aaa:function () {
+                alert("这是一个JQ方法")
+            },
+            drag:function () {
+                $(this).mousedown(function (ev) {
+                    var offsetX=ev.pageX-$(this).offset().left;
+                    var offsetY=ev.pageY-$(this).offset().top;
+                    //this是当前按下的div
+                    var _this=this;
+                    $(document).mousemove(function (ev) {
+                        $(_this).css({
+                            left:ev.pageX-offsetX,
+                            top:ev.pageY-offsetY
+                        })
+                    })
+
+                })
+                $(document).mouseup(function () {
+                    $(document).off("mousemove")
+                })
+                return this
+            }
+        })
+
+        $(function () {
+            $.aaa();
+            // $("div").drag();
+            //完成链式操作
+            $("div").drag().css("backgroundColor",'blue').mouseover(function () {
+                $(this).css("backgroundColor",'yellow')
+            })
+
+        })
+
+
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

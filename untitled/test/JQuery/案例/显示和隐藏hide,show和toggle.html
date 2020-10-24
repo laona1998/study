@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        /*
+        $(selector).hide(speed,callback);
+        $(selector).show(speed,callback);
+        $(selector).toggle(speed,callback);切换 hide() 和 show() 方法。
+        可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+        */
+        $(document).ready(function () {
+            $("button").click(function () {
+                if($("button").text()=='隐藏'){
+                    $("button").text('显示')
+                }else{
+                    $("button").text('隐藏')
+                }
+                    $('p,img').toggle(1000);
+            })
+        })
+    </script>
+</head>
+<body>
+<button type="button">隐藏</button>
+<p>这是文本</p>
+<img src="../../../img/p1.png" alt="">
+
+
+</body>
+</html>

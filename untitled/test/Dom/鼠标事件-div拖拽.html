@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>鼠标控制DIV移动</title>
+    <script type="text/javascript">
+
+        //监控鼠标状态 0表示松开；1表示按下
+        var _IsMousedown = 0;
+        //鼠标位置距div左侧边框的距离
+        var _ClickLeft = 0;
+        //鼠标位置距div上侧边框的距离
+        var _ClickTop = 0;
+
+        function moveInit(evt) {
+
+            _IsMousedown = 1;        //设置鼠标按下状态
+            var obj = getObjById('moveDiv');
+            _ClickLeft = evt.clientX - obj.offsetLeft;
+            _ClickTop = evt.clientY - obj.offsetTop;
+        }
+
+        function startMove(evt) {
+            if(_IsMousedown == 0){
+                return;
+            }
+            var obj = getObjById('moveDiv');
+            obj.style.left = evt.clientX- _ClickLeft +"px";
+            obj.style.top = evt.clientY - _ClickTop +"px";
+        }
+        function stopMove() {
+            _IsMousedown=0;
+        }
+
+        function getObjById(id) {
+
+            return document.getElementById(id);
+
+        }
+        /*
+            //在div内按下鼠标，开始计算鼠标在div内的位置
+            onmousedown="moveInit(evt);"
+            //鼠标按下开始移动，计算鼠标移动位置，会根据鼠标与div相对位置对div进行定位
+            onmousemove="startMove(evt)"
+            //鼠标松开或者离开div，停止移动.
+            onmouseup="stopMove()" onmouseout="stopMove()"
+         */
+    </script>
+
+    <style type="text/css" rel="stylesheet">
+        #moveDiv {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 1px solid #000;
+            background: #EAEAEA;
+        }
+    </style>
+</head>
+<body>
+<div id="moveDiv" style="left:20px;top:20px;"
+
+     onmousedown="moveInit(event);"
+
+     onmousemove="startMove(event)"
+
+     onmouseup="stopMove()"
+
+     onmouseout="stopMove()">
+
+</div>
+</body>
+</html>
+
+

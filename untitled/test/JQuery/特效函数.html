@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        #div1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        #div2{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+    </style>
+    <script>
+        // hide();隐藏
+        //     参数一：动画持续的毫秒数
+        //     参数二：回调函数，动画结束时执行
+        // show();显示
+
+        /*slideDown();
+        slideUP();卷闸效果*/
+
+        /*fadeIN();
+        fadeOut():淡入淡出
+        fadeTo(动画持续时间，透明度0~1，回调函数)
+        */
+        $(function () {
+            $("#div1").hover(function () {
+                $("#div2").hide(2000,function () {
+                    $("#div1").html("移入")
+                });
+            },function () {
+                $("#div2").show(2000,function () {
+                    $("#div1").html("移出")
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

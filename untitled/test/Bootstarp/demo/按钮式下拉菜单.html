@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+<!--        单按钮下拉菜单-->
+        <div class="btn-group">
+<!--     btn-info:按钮样式
+        data-toggle：触发事件的类型，如 modal，popover，tooltips
+        data-target ：事件的作用对象 。
+        -->
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                按钮式下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+            </ul>
+        </div>
+
+<!--        分列式下拉菜单-->
+        <div class="btn-group">
+<!--    btn-lg：大尺寸        -->
+            <button type="button" class="btn btn-info btn-lg"> 分列式下拉菜单</button>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--     dropup：向上弹出式菜单-->
+    <div class="btn-group dropup">
+        <button type="button" class="btn btn-default">Dropup</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+    </div>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>

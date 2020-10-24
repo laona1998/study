@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        // insertBIfore()  before()
+        // insertAfter()   after()
+        // appendTo() 插入到div节点的子节点的末尾  append()
+        // prependTo() 插入到div节点的子节点的首位    prepend()
+        // remove()
+
+        $(function () {
+            //找到span节点插入到div的前面
+            // $("span").insertBefore($("div")).css("backgroundColor",'red');
+            //div节点前面是span
+            $("div").before($("span")).css("backgroundColor",'red');
+
+        })
+
+
+    </script>
+</head>
+<body>
+<div id="div1"><em>em</em>div1</div>
+<span>span</span>
+</body>
+</html>

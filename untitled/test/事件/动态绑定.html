@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function addFunction() {
+            alert("事件绑定成功")
+            document.getElementById("btn").onclick = function () {
+                alert("早上好")
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<input type="button"  value="确定"  onclick="" id="btn">
+<hr>
+<input type="button" value="为上述按钮添加事件" onclick="addFunction();">
+</body>
+</html>

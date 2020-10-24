@@ -1,0 +1,65 @@
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" href="css/onecss.css" >
+</head>
+<body>
+        <div id="header">
+            <h3>个人中心</h3>
+            <img src="img/bingge.jpg" >
+            <div id="header1">
+                <h4>用户名：兵哥学编程</h4>
+                <h4>等级：老师</h4>
+            </div>
+        </div>
+
+        <div id="body1">
+
+            <span>
+                <div><img src="img/nav1.png">&nbsp;首页</div>
+                <div><img src="img/nav2.png">&nbsp;帮助</div>
+                <div><img src="img/nav3.png" >&nbsp;资料 </div>
+            </span>
+
+
+
+            <strong>我要登陆</strong>
+            <p>姓名</p>
+            <input type="text" placeholder="请输入姓名" id="username">
+            <p>密码</p>
+            <input type="password" placeholder="请输入密码" id="password"><br/>
+            <br/>
+            <input id="sub" type="submit" value="提交" onclick="check()">
+        </div>
+
+        <div id="fotter">
+            <h1>说明</h1>
+            <p>链接属于行内元素,但是此时需要宽度高度,因此需要模式转换.里面文字
+                需要水平居中和垂直居中.因此需要单行文字垂直居中的代码.链接里面需
+                要设置背景图片.因此需要用到背景的相关属性设置.鼠标经过变化背悬图
+                片,因此需要用到链接伪类选择器.</p>
+
+        </div>
+</body>
+<script>
+    function check() {
+        if(document.getElementById("username").value=="") {
+            alert("没有输入用户名！");
+            return false;
+        } else if(document.getElementById("password").value=="") {
+            alert("没有输入密码！");
+            return false;
+        } else {
+            alert("提交成功！")
+            return true;
+        }
+    }
+
+
+
+</script>
+
+
+</html>

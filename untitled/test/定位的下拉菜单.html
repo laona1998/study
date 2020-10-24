@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+     #menu{
+         width: 100px;
+         height: 30px;
+         margin: 20px auto;
+         border: 1px black solid;
+         position: relative;
+     }
+     #menu ul {
+         width: 100px;
+         border: 1px black solid;
+         position: absolute;
+         left: -1px;
+         top: 30px;
+         background: white;
+         display: none;
+     }
+    #menu:hover ul{
+        display: block;
+    }
+    #menu ul li:hover{
+        background: gray;
+    }
+        p{
+            text-align: center;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<div id="menu">
+    卖家中心
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </ul>
+
+</div>
+<p>测试段落Fdssdfsdfsd的v法随风倒十分</p>
+</body>
+</html>

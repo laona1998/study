@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            function myclick1() {
+                alert("早上好");
+            }
+
+            function myclick2() {
+                alert("晚上好");
+            }
+            //在此添加代码
+            btn.addEventListener("click",myclick1, false);
+            //将要绑定的事件的Dom元素.监听函数（事件名称，触发事件后将要执行的函数名，改变触发的顺序）
+            btn.addEventListener("click",myclick2, false);
+        };
+    </script>
+</head>
+<body>
+<input id="btn"type="button"value="确定"/>
+</body>
+</html>

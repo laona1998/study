@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*头部*/
+        #header{
+            background-color: #663366;
+            width: 100%;
+            height: 80px;
+            color: white;
+            overflow: hidden;
+        }
+        #header h3{
+            position: relative;
+            left: 80px;
+            top: 50px;
+        }
+        #header ul{
+            list-style: none;/*去除标点*/
+            position: relative;
+            right: 150px;
+            top: 30px;
+            float: right;
+        }
+        #header li{
+            display: inline-block;
+            margin: 0 28px;
+        }
+        #mao{
+            margin-left: 1450px;
+            margin-top: 5px;
+        }
+
+        /*主体*/
+        #body{
+            color: white;
+        }
+        #body img{
+            width: 100%;
+        }
+        #body #text{
+            border: 1px solid;
+            background-color:rgba(255,255,255,0.2);
+            position:absolute;
+            z-index:2;
+            right:170px;
+            bottom:80px;
+            text-indent: 2em;
+            text-align: right;
+        }
+        #body #tex2{
+            margin: 10px;
+            text-align: left;
+        }
+        #banner{
+            border: 1px solid;
+            background-color: darkgray;
+            overflow: hidden;
+            height: 500px;
+            margin-top: -5px;
+
+
+        }
+        /*内容*/
+        #content{
+            margin-top: 10px;
+        }
+        #content p{
+            text-indent: 2em;
+            font-size: 12px;
+        }
+        #content #p1{
+            float: left;
+            border: 10px whitesmoke solid;
+            background-color: white;
+            width: 320px;
+            height:300px;
+            display: inline-block;
+            margin-left: 230px;
+        }
+        #p1 img{
+            width: 300px;
+            height: 180px;
+        }
+
+        #content #p2{
+            float: left;
+            border: 10px whitesmoke solid;
+            background-color: white;
+            width: 320px;
+            height:300px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        #p2 img{
+            width: 300px;
+            height: 180px;
+        }
+
+        #content #p3{
+            float: left;
+            border: 10px whitesmoke solid;
+            background-color: white;
+            width: 320px;
+            height:300px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        #p3 img{
+            width: 300px;
+            height: 180px;
+        }
+
+        #content1{
+            text-align: center;
+        }
+        #content1 img{
+            border-radius: 50%;
+            margin-top: -100px;
+        }
+        #content1 #title{
+            font-size: 20px;
+            font-family: "Century Gothic";
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        #content1 #text1{
+            width: 600px;
+            font-size: 14px;
+            margin: 0 auto;
+            text-indent: 2em;
+        }
+        /*底部*/
+        #fotter{
+            background: black;
+            width: 100%;
+            height: 500px;
+            color: white;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        #fotter1 ul{
+            list-style: none;
+            text-align: center;
+        }
+        #fotter1 li{
+            display: inline-block;
+            margin: 10px 28px;
+        }
+
+        #fotter2 ul{
+            list-style: none;
+            text-align: center;
+        }
+        #fotter2 li{
+            display: inline-block;
+            margin: 10px 100px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #fotter3{
+            margin-left: 190px;
+            float: left;
+        }
+        #fotter3 ul{
+            list-style: none;
+        }
+        #fotter3 li:nth-of-type(2){
+            text-decoration: underline;
+        }
+
+        #fotter4{
+            margin-left: 200px;
+            float: left;
+        }
+        #fotter4 ul{
+            list-style: none;
+        }
+        #fotter4 li:nth-of-type(2){
+            text-decoration: underline;
+        }
+
+        #fotter5{
+            margin-left: 200px;
+            float: left;
+        }
+        #fotter5 ul{
+            list-style: none;
+        }
+        #fotter5 li:nth-of-type(2){
+            text-decoration: underline;
+        }
+        #fotter6{
+            margin-left: 200px;
+            float: left;
+        }
+        #fotter6 ul{
+            list-style: none;
+        }
+        #fotter6 li:nth-of-type(2){
+            text-decoration: underline;
+        }
+        #fotter7{
+            margin-left: 200px;
+            float: left;
+        }
+        #fotter7 ul{
+            list-style: none;
+        }
+        #fotter7 li:nth-of-type(2){
+            text-decoration: underline;
+        }
+        #food{
+            margin-top: 300px;
+            margin-left: 700px;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+<div id="header">
+    <h3>YourLOGO</h3>
+    <ul>
+        <li>首页</li>
+        <li>文章</li>
+        <li>作品</li>
+        <li>关于</li>
+    </ul>
+    <div id="mao"><a href="https://github.com/"> <img src="img/icon-github.png"> </a>  </div>
+</div>
+
+<div id="body">
+    <img src="img/beijin.jpg" alt="">
+    <div id="text">
+         <h1>标题1</h1>
+        <div id="tex2">
+            <p>这里是正文这里是正文这里是正文这里是正文这里是正文,<br>
+                这里是正文这里是正文这里是正文这里是正文这里是正文
+                这里,<br>是正文这里是正文这里是正文这里是正文这里是正文<br>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div id="banner">
+    <div id="content">
+        <div id="p1">
+            <img src="img/p1.png" alt="">
+            <p>这里是正文，12px字体大小，行高170%。整块
+                白色的底宽度为320px，图片大小为300*180,
+            </p>
+            <p>
+                文字距离图片下方间隔为15px，距离白色底左
+                右两侧的内边距为30px，距离白色底块下方的内边
+                距为25px
+            </p>
+            <p>     三个白色模块之间的间隔为10px，距离上面
+                banner图片的间隔为10px
+            </p>
+        </div>
+
+        <div id="p2">
+            <img src="img/p2.png" alt="">
+            <P>这三块白色模块的高度需要保持一致，且自适
+                应于文字内容高度
+            </P>
+        </div>
+
+        <div id="p3">
+            <img src="img/p3.png" alt="">
+            <p>图片内容和文字内容请自定义。</p>
+            <p>这里是内容，这里是内容这里是内容这里是内
+                容这里是内容这里是内容这里是内容这里是内容这
+                里是内容这里是内容这里是内容这里是内容这里是
+                内容这里是内容这里是内容。
+            </p>
+
+        </div>
+    </div>
+</div>
+
+    <div id="content1">
+        <img src="img/touxiang.png" alt="">
+        <div id="title"> <h1> Hi，l'm YOURNAME</h1> </div>
+      <div id="text1">
+          <p> 这是一段长长的自我介绍，这是一段长长的自我介绍，这是一段长长的自我介绍，这是一段
+              长长的自我介绍，这是一段长长的白我介绍，这是一段长长的自我介绍，这是一段长长的自我介
+              绍，这是一段长长的自我介绍，这是一段长长的自我介绍，这是一段长长的自我介绍，这是一段
+              长长的自我介绍，这是一段长长的自我介绍，这是一段长长的自我介绍，这是一段长长的自我介
+          </p>
+      </div>
+    </div>
+
+
+    <div id="fotter">
+       <div id="fotter1">
+           <ul>
+               <li>首页</li>
+               <li>文章</li>
+               <li>作品</li>
+               <li>关于</li>
+           </ul>
+       </div>
+
+        <hr>
+
+        <div id="fotter2">
+            <ul>
+                <li>学习资料</li>
+                <li>友情链接</li>
+                <li>学习资料</li>
+                <li>友情链接</li>
+                <li>学习资料</li>
+            </ul>
+        </div>
+
+        <div id="fotter3">
+            <ul>
+                <li>学习资料</li>
+                <li>LTHK</li>
+                <li>rer讨样式</li>
+                <li>L1HK</li>
+                <li>LTHK</li>
+            </ul>
+        </div>
+        <div id="fotter4">
+            <ul>
+                <li>学习资料</li>
+                <li>LTHK</li>
+                <li>rer讨样式</li>
+
+            </ul>
+        </div>
+        <div id="fotter5">
+            <ul>
+                <li>学习资料</li>
+                <li>LTHK</li>
+                <li>rer讨样式</li>
+                <li>L1HK</li>
+                <li>LTHK</li>
+            </ul>
+        </div>
+        <div id="fotter6">
+            <ul>
+                <li>学习资料</li>
+                <li>LTHK</li>
+                <li>rer讨样式</li>
+                <li>L1HK</li>
+                <li>LTHK</li>
+            </ul>
+        </div>
+        <div id="fotter7">
+            <ul>
+                <li>学习资料</li>
+                <li>LTHK</li>
+                <li>Hover讨样式</li>
+                <li>L1HK</li>
+            </ul>
+        </div>
+
+        <div id="food">
+            <p>版权信息</p><br>
+            <img src="img/mao1.png" alt=""></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                if($("button").text()=='点我隐藏'){
+                    $("button").text('点我显示')
+                }else{
+                    $("button").text('点我隐藏')
+                }
+                $("div").animate({
+                    height:'toggle'
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<button>点我隐藏</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+
+</body>
+</html>

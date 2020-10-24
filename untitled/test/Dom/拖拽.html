@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+        var oDiv = document.getElementById("div1");
+        oDiv.onmousedown = function(ev){
+            var e = ev||window.event;
+            var offsetX = e.pageX - this.offsetLeft;
+            var offsetY = e.pageY - this.offsetTop;
+            document.onmousemove = function(ev) {
+                var e = ev || window.event;
+                oDiv.style.left = e.pageX - offsetX + 'px';
+                oDiv.style.top = e.pageY - offsetY + 'px';
+            }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

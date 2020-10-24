@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试jquery.color.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //插件编写
+        ;(function($) {
+            jQuery.fn.extend({
+                "color":function(value){
+                    return this.css("color",value);
+                }
+            });
+        })(jQuery);/*options为传递的参数 ：red->value*/
+
+        //插件应用
+        $(function(){
+            //把所有的div的字体颜色都设为红色
+            alert( $("div").color("red")+"\n返回object证明得到的是jQuery对象。");
+        })
+    </script>
+</head>
+<body>
+<div style="color:red">red</div>
+<div style="color:blue">blue</div>
+<div style="color:green">green</div>
+<div style="color:yellow">yellow</div>
+</body>
+</html>

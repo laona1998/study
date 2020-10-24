@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+</head>
+<body>
+<button id="btn1">获取新闻</button>
+<button id="btn2">删除新闻</button>
+</body>
+<script>
+$("#btn1").click(function () {
+$.ajax({
+        url:'http://www.678mob.com/news.php?method=list',
+        type:'POST',
+        dataType:'json',
+        data:{
+            type:1
+        },
+        success:function (res) {
+            console.log(res)
+            // console.log(res.data[0].title)
+        },
+        error:function (res) {
+            console.log(res)
+        }
+
+    })
+})
+
+$("#btn2").click(function () {
+    $.ajax({
+        url:'http://www.678mob.com/news.php?method=delItem',
+        type:'POST',
+        dataType:'json',
+        data:{
+            id:1
+        },
+        success:function (res) {
+            console.log(res)
+            // console.log(res.data[0].title)
+        },
+        error:function (res) {
+            console.log(res)
+        }
+
+    })
+
+})
+
+</script>
+</html>

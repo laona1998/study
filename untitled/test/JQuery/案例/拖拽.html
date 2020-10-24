@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        $(function () {
+            $("div").mousedown(function (ev) {
+                var offsetX=ev.pageX-$(this).offset().left;
+                var offsetY=ev.pageY-$(this).offset().top;
+                //this是当前按下的div
+                var _this=this;
+                $(document).mousemove(function (ev) {
+                    $(_this).css({
+                        left:ev.pageX-offsetX,
+                        top:ev.pageY-offsetY
+                    })
+                })
+
+            })
+            $(document).mouseup(function () {
+                $(document).off("mousemove")
+            })
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

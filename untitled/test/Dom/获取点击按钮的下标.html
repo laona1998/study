@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var aBtns=document.getElementsByTagName("button");
+
+
+            for (var i=0;i<aBtns.length;i++){
+                //给每一个按钮添加自定义属性
+                aBtns[i].index=i;
+                aBtns[i].onclick=function () {
+                    alert(this.index)
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 600px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            margin: 100px auto;
+            border: 1px solid;
+        }
+    </style>
+    <script src="自定当前时间.js"></script>
+    <script>
+        setInterval(function () {
+            var oDiv=document.getElementById("div1")
+            oDiv.innerHTML=showTime();
+        },1000)
+
+
+    </script>
+</head>
+<body>
+<div id="div1">显示当前时间</div>
+</body>
+</html>

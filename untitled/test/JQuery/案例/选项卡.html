@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 button{width: 100px;height: 30px;background-color: gray;color: white;font-size: 18px}
+        #div1 .active{background-color: orange;color: blue;}
+        #div1 div{width: 340px;height: 300px;border: 1px solid black;display: none}
+    </style>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+
+    <script>
+        $(function () {
+            var aBtns=$("#div1").find("button");
+            var aDivs=$("#div1").find("div");
+
+            //给按钮添加点击事件
+            aBtns.click(function () {
+                aBtns.attr("class",'');//取消所有div样式
+                aDivs.css("display",'none');//隐藏所有div
+
+                $(this).attr("class",'active');//将class的''->'active'
+                aDivs.eq($(this).index()).css("display",'block')//将当前点击的对应的div显示出来
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1">
+    <button class="active">HTML5</button>
+    <button>Python</button>
+    <button>Java</button>
+    <div style="display: block">HTML称为超文本标记语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。</div>
+    <div> Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。</div>
+    <div> Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程</div>
+</div>
+</body>
+</html>

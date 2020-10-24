@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Card</title>
+    <style type="text/css">
+        div#player1, div#player3 {
+            margin: 0 auto;
+            width: 460px;
+            height: 70px;
+        }
+        div#player4, div#player2 {
+            margin: 0 auto;
+            width: 70px;
+            height: 460px;
+            margin-left: 100px;
+            float: left;
+        }
+        div#player2 {
+            margin-right: 100px;
+            float: right;
+        }
+        div#footer, div#compeleteCards {
+            clear: both;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #create,#sort,#deal{
+            font-size:18px;
+            font-weight:500;
+        }
+        .center {
+            height: 460px;
+        }
+        .card {
+            width: 30px;
+            height: 60px;
+            border: solid 0.5px black;
+            margin-left: 3px;
+            float: left;
+            -webkit-user-select: none;
+        }
+        .number {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <div id="player1">
+
+    </div>
+    <div class="center">
+        <div id="player4">
+
+        </div>
+
+        <div id="player2">
+
+        </div>
+    </div>
+    <div id="player3">
+
+    </div>
+</div>
+<div id="footer">
+    <input id="create" type="button" value="创建"/>
+    <input id="sort" type="button" value="洗牌"/>
+    <input id="deal" type="button" value= "发牌" />
+</div>
+<div id="compeleteCards">
+
+</div>
+</body>
+<script type="text/javascript" src="发牌.js"></script>
+</html>

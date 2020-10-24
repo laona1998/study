@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        // atrr:设置和修改行间属性
+        $(function () {
+            // 获取属性
+            // alert($("#div1").attr("id"))//attr("title"),attr("box")
+            //设置属性
+            // $("#div1").attr("title",'world')
+            //一次性修改多条属性
+            $("#div1").attr({
+                title:'world',
+                class:'xxx',
+                yyy:'zzz'
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1" title="hello" class="box">div1</div>
+</body>
+</html>

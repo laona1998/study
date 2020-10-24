@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script>
+    // filter    过滤 对已经获取到的网页元素进行过滤
+    // not       filter的反义词
+    // has       拥有，直接判定子结点中是否有符合条件的元素
+
+    $(function () {
+        $("div").filter(".box").css("backgroundColor","orange");
+        // $("div").not(".box").css("backgroundColor","orange");
+        // $("div").has(".box").css("backgroundColor","orange");
+    })
+
+</script>
+<body>
+<div class="box">div1</div>
+<div>div2 <strong class="box"></strong></div>
+</body>
+</html>

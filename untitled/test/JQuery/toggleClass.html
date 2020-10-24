@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+      //  toggleClass: 为集合中的每个元素添加或移除一个或多个class，至于具体是添加还是移除则取决于当前这个元素中是否存在这个class值，或者由参数state的值决定增删。
+        // $("li").toggleClass("active")//交换class
+        $("li").toggleClass("active",true)//给下面的也添加class
+
+      $(document).ready(function(){
+          $("button").click(function(){
+              $("h1,h2,p").toggleClass("blue");
+          });
+      });
+    </script>
+
+    <style type="text/css">
+        .blue
+        {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="active"><h1>Item 1</h1></li>
+    <li class=""><h1>Item 2</h1></li>
+
+    <h1>标题 1</h1>
+    <h2>标题 2</h2>
+    <p>这是一个段落。</p>
+    <p>这是另一个段落。</p>
+    <button>切换 CSS 类</button>
+</ul>
+</body>
+</html>

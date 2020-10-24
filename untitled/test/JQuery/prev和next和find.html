@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        // prev:查找当前节点的上一个
+        // next:查找当前节点的下一个
+        find
+        $(function () {
+            $("h3").prev().css("backgroundColor","red");
+            $("h3").next().css("backgroundColor","blue");
+
+        })
+
+        // find:查找
+        $(function f1() {
+            $("ul").find("li").css("backgroundColor","red");
+        })
+    </script>
+</head>
+<body>
+<h2>h2</h2>
+<p>p</p>
+<h3>h3</h3>
+<h4>h4</h4>
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+</ul>
+<ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+</ol>
+
+</body>
+</html>

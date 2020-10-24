@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // concat:1.拷贝原数组：2.合并数组
+        // var arr1=[10,20,30]
+        // var arr2=[50,60,70]
+        // var newArry=arr1.concat(arr2,"hello",true);
+        // alert(newArry)
+
+        // slice():获取指定区域元素[start,end）,生成新数组
+        //  var arr1=[10,20,30,40,50]
+        //  var newArry=arr1.slice(1,4)
+        // alert(newArry)
+
+        // splice()
+        //     增加
+        // var arr1=[10,20,30,40,50];
+        // var newres=arr1.splice(2,0,"hello","world");
+        // alert(newres);
+        //     返回空数组（截取的元素）
+
+        // // 删除
+        // var arr1=[10,20,30,40,50];
+        // var newres=arr1.splice(1,2);
+        // alert(arr1);
+        // alert(newres);
+
+        // 修改
+        var arr1=[10,20,30,40,50];
+        var newres=arr1.splice(2,1,"hello");
+        alert(arr1)
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

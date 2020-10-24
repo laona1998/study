@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        div{width: 400px;height: 400px;border: 1px solid black}
+
+    </style>
+    <script>
+        //load方法:将url传入以后，将下载到数据直接填充到被选中元素的innerHTML中
+
+        $(function () {
+            $("button").click(function () {
+                // $("div").load("2.txt #p1")//可以下载符合条件的数据
+                $("div").load("2.txt",function (data,statusText,xhr) {
+                    alert(data+","+statusText);
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+<button id="btn1">下载数据</button>
+<div></div>
+</body>
+</html>

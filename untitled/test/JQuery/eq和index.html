@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        // index():获取当前节点在兄弟节点中的下标
+        // eq(下标):通过下标获取指定元素的节点
+
+
+        $(function () {
+            alert($("h3").index())
+            $("li").eq(3).css("backgroundColor","orange");
+            $("li:eq(2)").css("backgroundColor","orange");
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+<strong>strong</strong>
+<em>em</em>
+<div id="div1">
+    <h1>h2</h1>
+    <h2>h2</h2>
+    <h3>h2</h3>
+    <h4>h2</h4>
+</div>
+<ul>
+    <li>111</li>
+    <li>111</li>
+    <li>111</li>
+    <li>111</li>
+
+</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>.
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+       $(function () {
+            $("#btn1").click(function () {
+                $.ajax({
+                    type:"get",
+                    url:"getList.php",
+                    success:function (result) {
+                        //1.数组
+                        // var arr=JSON.parse(result);
+                        // for (var i=0;i<arr.length;i++){
+                        //     alert(i+","+arr[i])
+                        // }
+                        //2.对象
+                         var arr=JSON.parse(result);
+                         alert(arr.username)
+
+                    },
+                    error:function (msg) {
+                        alert(msg)
+                    }
+
+
+
+                })
+            })
+       })
+    </script>
+</head>
+<body>
+<button id="btn1">下载数据</button>
+</body>
+</html>

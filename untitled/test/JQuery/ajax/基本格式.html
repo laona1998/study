@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        //$.ajax({
+        // url:xxx,
+        //     type:xxx,
+        //     data(可选):xXX,
+        //     dataType(可选):xxx,
+        //     success:function0,
+        //     error:function()8
+        // });
+        $(function () {
+            var aj =$.ajax({
+                url:'http://wthrcdn.etouch.cn/weather_mini?city=芜湖',
+                type:'get',
+                dataType:'jsonp',
+                success:function (data) {
+                    $('body').text(data)
+                    console.log(data)
+                },
+                error:function () {
+                  alert("异常")
+                }
+
+
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

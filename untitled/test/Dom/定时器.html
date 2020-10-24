@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var  stoNum=1;
+        var  sitNum=1;
+        function myclick() {
+            mytimer=window.setTimeout("alert('这就是setTimeout方法')", 2000)
+        }
+        function cto() {
+            window.clearTimeout(mytimer);
+        }
+        function sitAdd() {
+            document.getElementById("num2").value=sitNum;
+            sitNum++;
+        }
+        function sit() {
+            sitTime=window.setInterval("sitAdd()",1000);
+        }
+        function cit() {
+            window.clearInterval(sitTime);
+        }
+
+
+    </script>
+</head>
+<body>
+<p>
+    setTimeout方法，可以在指定时间后执行某个动作
+</p>
+<input type="button"value="两秒后弹出窗口"onclick="myclick()"/>
+<p>
+    clearTimeout方法，可以清除已经设置的setTimeout方法
+</p>
+<input type="button"value="清除两秒后弹出窗口（先点击弹出窗口，再点击清除，则不会弹窗了）"onclick="cto()"/>
+<p>
+    setInterval方法，可以在指定时间后循环执行某个动作
+</p>
+<input type="button"value="数字每秒循环加1"onclick="sit()"/>
+<input type="text"id="num2"size="20"value="0"/>
+<p>
+    clearInterval方法，可以清除已经设置的setInterval方法
+</p>
+<input type="button"value="清除数字每秒加1"onclick="cit()"/>
+</body>
+</html>

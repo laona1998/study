@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        div.progress {
+            width: 700px;
+            margin: 50px;
+        }
+
+        div.bar {
+            width: 100%;
+            height: 35px;
+        }
+
+        div.border, div.percent {
+            float: left;
+            height: 30px;
+        }
+
+        div.border {
+            width: 90%;
+            border: 1px solid #ccc;
+            background-color: #eee;
+        }
+
+        div.fill {
+            width: 0%;
+            height: 100%;
+            background-color: #6CAF00;
+        }
+
+        div.percent {
+            width: 8%;
+            line-height: 30px;
+            margin: 1px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        div.control {
+            height: 20px;
+            padding: 10px;
+        }
+
+        .clear {
+            clear:both;
+        /* 清楚浮动*/
+        }
+    </style>
+</head>
+<body>
+<div class="progress">
+    <div class="bar">
+        <div class="border">
+            <div class="fill"></div>
+        </div>
+        <div class="percent">
+            <span class="num">0</span>%
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="control">
+        <button class="start">开始</button>
+        <button class="pause">暂停</button>
+    </div>
+</div>
+</body>
+<script>
+    var intervalHandler;
+    $(document).ready(function(){
+        $('.start').click(function() {
+            $('.start').text('重新开始');
+            $('.pause').text('暂停');
+            $('span.num').text(0);
+            doProgress();
+        });
+
+        $('.pause').click(function() {
+            if ($('.pause').text() == '暂停') {
+                $('.pause').text('继续');
+                clearInterval(intervalHandler);
+            } else {
+                $('.pause').text('暂停');
+                doProgress();
+            }
+        });
+    });
+    function doProgress() {
+        clearInterval(intervalHandler);
+        intervalHandler = setInterval(function() {//定时器
+            var percent = parseInt($('span.num').text());
+
+            if (percent != 100) {
+                percent++;
+                $('div.fill').width(percent + '%');
+                $('span.num').text(percent);
+            }
+        }, 100);
+    }
+
+</script>
+</html>

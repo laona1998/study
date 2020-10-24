@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        #div1{
+            background-color: #72c1eb;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(function () {
+
+            // 1.给一个事件添加一个函数
+            /*$('#div1').on("click",function () {
+                alert("hello")
+            })*/
+
+            //2.同时给多个事件添加一个函数，多个事件之间可以通过空格隔开
+            // var i=0;
+            // $('#div1').on("click mouseover",function () {
+            //     $(this).html(i++);
+            // })
+
+         //   3.给不同的事件添加不同的函数
+            $('#div1').on({
+                click:function () {
+                    alert("点击")
+            },
+                mouseover:function () {
+                    $(this).css("backgroundColor",'orange');
+                },
+                mouseout:function () {
+                    $(this).css("backgroundColor",'blue');
+                }
+            })
+
+            //4.事件委托
+            //第二个参数是触发对象的选择器
+            $("ul").on("click","li",function () {
+                $(this).css("backgroundColor",'orange');
+            })
+            var i=6;
+            $("#btn1" ).click( function(){
+                    //新增li节点
+                $('<li>'+i++ +'</li>').appendTo($("ul"));
+            })
+
+           $("#cancel").click(function () {
+               // $("#div1").off();//取消所有事件上的所有函数
+               $("#div1").off("click");//取消某事件下的所有函数
+
+           })
+
+
+        })
+        
+    </script>
+</head>
+<body>
+ <div id="div1"></div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    
+</ul>
+<button id="btn1">增加节点</button>
+<button id="cancel">取消事件</button>
+
+</body>
+</html>

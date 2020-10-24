@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        /*
+        * $(selector).slideDown(speed,callback);
+        *$(selector).slideUp(speed,callback);
+        * $(selector).slideToggle(speed,callback);
+        * */
+        $(document).ready(function(){
+            $(".flip").click(function(){
+                if($("p.flip").text()=='点我显示'){
+                    $("p.flip").text('点我隐藏')
+                }else{
+                    $("p.flip").text('点我显示')
+                }
+
+                $(".panel").slideToggle("slow");
+            });
+        });
+    </script>
+    <style type="text/css">
+        div.panel,p.flip
+        {
+            margin:0px;
+            padding:5px;
+            text-align:center;
+            background:#e5eecc;
+            border:solid 1px #c3c3c3;
+        }
+        div.panel
+        {
+            height:120px;
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="panel">
+    <p>W3School - 领先的 Web 技术教程站点</p>
+    <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+</div>
+<p class="flip">点我显示</p>
+
+</body>
+</html>

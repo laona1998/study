@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        #div1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        #div2{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+    </style>
+    <script>
+
+        $(function () {
+            $("#div1").hover(function () {
+                //每次调用animate之前先去调用stop，关闭上一次定时器
+                //$(selector).stop(stopAll,goToEnd);
+                /*可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。
+                  可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。*/
+                $("#div2").stop().animate({
+                    width:300,
+                    height:300,
+                    opacity:0.5
+                },4000,function () {
+                    $("#div1").html("移入")
+                })
+            },function () {
+                $("#div2").stop().animate({
+                    width:100,
+                    height:100,
+                    opacity:1
+                },4000,function () {
+                    $("#div1").html("移出")
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

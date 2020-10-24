@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{opacity: 0.3;
+            filter: alpha(opacity=30);//浏览器兼容写法
+        }
+    </style>
+
+    <script>
+        window.onload=function () {
+            var oImg = document.getElementById("img1");
+            oImg.onmouseover = function () {
+                startMove(100)
+            }
+            oImg.onmouseout = function () {
+                startMove(30);
+            }
+        }
+            var alpha = 30;
+            var timer = null;
+            function startMove(iTarget) {
+                var oImg = document.getElementById("img1");
+                clearInterval(timer)
+                var speed = 2;
+                speed = iTarget > alpha ? Math.abs(speed) : -Math.abs(speed);
+                timer = setInterval(function () {
+                    //运动和停止分开
+                    if (iTarget == alpha) {
+                        clearInterval(timer);
+                    } else {
+                        alpha += speed;
+                        //重新设置透明度
+                        // document.title= alpha;
+                        oImg.style.opacity = alpha/100;
+                        oImg.style.filter =`alpha(opacity=${alpha})`;
+                    }
+
+                }, 30)
+            }
+
+
+    </script>
+</head>
+<body>
+<img src="../../img/放.jpg" id="img1">
+</body>
+</html>

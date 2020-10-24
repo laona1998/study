@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 100px;
+            background-color: #72c1eb;
+        }
+        #div2{
+            width: 400px;
+            height: 500px;
+            background-color: peachpuff;
+        }
+        #input1{
+            width: 380px;
+            height: 30px;
+            font-size: 18px;
+        }
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        #div2 div{
+            border-bottom: 1px gray dashed;
+            padding: 2px;
+            position: relative;
+        }
+        #div2 div button{
+            position: absolute;
+            right: 0;
+        }
+    </style>
+    <script src="通用.js"></script>
+    <script>
+        window.onload=function () {
+            var oDiv1=document.getElementById("div1")//事件委托
+            var oDiv2=document.getElementById("div2")
+            var onInput =document.getElementById("input1")
+            //获取div1下的所有button
+            var  aBtns=oDiv1.getElementsByTagName("button");
+
+            //分别给三个按钮添加不同的点击函数
+            aBtns[0].onclick=function () {
+                   if (!onInput.value){
+                       alert("输入内容不能为空");
+                   }else {
+                       //获取到输入框内容,创建节点到页面上
+                       var newDiv= document.createElement("div");
+                       var oTxt=document.createTextNode(onInput.value);
+                       newDiv.appendChild(oTxt);
+                       newDiv.style.backgroundColor=randomColor();
+
+                       oDiv2.appendChild(newDiv)
+                       onInput.value='';
+                   }
+            }
+                aBtns[1].onclick=function () {
+                        //删除最后一个节点
+                    oDiv2.removeChild(oDiv2.lastChild);
+                }
+                aBtns[2].onclick=function () {
+                    //拷贝最后一个节点，添加到页面上
+                    var newNode=oDiv2.lastChild.cloneNode(true);
+                    oDiv2.appendChild(newNode);
+                }
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="div1">
+    <input type="text" id="input1" placeholder="输入内容"/><br>
+    <button>增加</button>
+    <button>删除</button>
+    <button>拷贝</button>
+</div>
+<div id="div2">
+<!--    <div>XXX<button>x</button></div>-->
+<!--    <div>XXX<button>x</button></div>-->
+<!--    <div>XXX<button>x</button></div>-->
+</div>
+
+</body>
+</html>

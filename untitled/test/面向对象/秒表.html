@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    #div1{
+        width: 120px;
+        height: 200px;
+        padding: 50px;
+        background-color: #72c1eb;
+        border: 1px solid black;
+        margin: 0 auto;
+
+    }
+    #div1 span{
+        font-size: 22px;
+    }
+    #div1 button{
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+    }
+    </style>
+
+    <script>
+
+        //通过id获取标签的方法进行简化
+        function $(id){
+            return document.getElementById(id);
+        }
+        var i=0;//总秒数
+        var timer=null;//记录定时器的返回值
+        var isRunning=false;//代表当前定时器是否运行
+        window.onload=function () {
+            //获取按钮
+            function startFunc() {
+               timer= setInterval(function () {
+                    i++;
+                    $("sec").innerHTML=doubleNum(i%60);
+                    $("min").innerHTML=doubleNum(parseInt(i/60)%60);
+                    $("hour").innerHTML=doubleNum(parseInt(i/3600));
+                },1000);
+
+            }
+            //暂停
+            function  pauseFunc() {
+                clearInterval(timer)
+            }
+            //给按钮添加点击事件
+            $("btn1").onclick=function(){
+                if (!isRunning){
+                    $("btn1").innerHTML="暂停";
+                    isRunning=true;
+                    startFunc();
+                }else {
+                    $("btn1").innerHTML="开始";
+                    isRunning=false;
+                    pauseFunc();
+                }
+
+
+            }
+
+            //复位
+            $("reset").onclick=function () {
+                clearInterval(timer);
+                i=0;
+                isRunning=false;
+                $("btn1").innerHTML="开始";
+                $("sec").innerHTML="00";
+                $("min").innerHTML="00";
+                $("hour").innerHTML="00";
+
+            }
+
+
+        }
+        
+        function doubleNum(n) {
+            if (n<10){
+                return "0"+n;
+            }else {
+                return n;
+            }
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+<div id="div1">
+    <span id="hour">00</span>
+    <span>:</span>
+    <span id="min">00</span>
+    <span>:</span>
+    <span id="sec">00</span>
+    <br>
+    <button id="btn1">开始</button>
+    <button id="reset">复位</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+<!--    pull-right 右对齐
+        dropdown:向下显示
+        -->
+    <div class="dropdown pull-right">
+        <button class="btn btn-default dropdown-toggle"type="button" data-toggle="dropdown">
+            下拉菜单
+<!--    creat :三角图标        -->
+            <span class="caret"></span>
+        </button>
+        <!--    dropdown-menu-right 右对齐-->
+        <ul class="dropdown-menu dropdown-menu-right"  role="menu" aria-labelledby="dropdownMenu1">
+<!--            dropdown-header  标题-->
+            <li class="dropdown-header">大写的数字</li>
+            <li><a href="#" role="menuitem">一</a> </li>
+            <li><a href="#" role="menuitem">二</a> </li>
+            <li><a href="#" role="menuitem">三</a> </li>
+            <li><a href="#" role="menuitem">四</a> </li>
+<!--            <li class="dropdown-header">小写的数字</li>-->
+<!--            divider 分割线-->
+            <li class="divider"></li>
+<!--            disable 禁用-->
+            <li  class="disabled"><a href="#" role="menuitem">1</a> </li>
+            <li><a href="#" role="menuitem">2</a> </li>
+            <li><a href="#" role="menuitem">3</a> </li>
+            <li><a href="#" role="menuitem">4</a> </li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>
