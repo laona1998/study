@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            border-bottom: 1px solid #e7e7e7;
+        }
+        header h1 {
+            text-align: center;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        #banner {
+            margin-top: 5px;
+        }
+        .swiper-slide {
+            display: none;
+        }
+        .swiper-slide:first-child {
+            display: block;
+        }
+        .swiper-slide img {
+            width: 100%;
+            border-radius: 14px;
+            display: block;
+            box-shadow: #E0E0E0 1px 1px 5px 0;
+        }
+        .swiper-pagination {
+            cursor: pointer;
+        }
+        .banner-action .buttons div {
+            padding: 0 5px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .banner-action .buttons div:first-child{
+            position: absolute;
+            left: 10px;
+            top: 130px;
+            text-align: center;
+        }
+        .banner-action .buttons div:last-child{
+            position: absolute;
+            right: 10px;
+            top: 130px;
+        }
+        #content nav {
+            /*补充样式*/
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+            border-bottom: 10px solid #e7e7e7;
+        }
+        #content nav a{
+            /*text-align: center;*/
+            /*width: 24%;*/
+
+            display: inline-block;
+            color: #000000;
+            text-decoration: none;
+        }
+        #content nav img {
+            width: 55px;
+        }
+        .nav-bar {
+            /*补充样式*/
+            display: flex;
+            justify-content: space-around;
+
+            background: #ffffff;
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .nav-bar a {
+            /*补充样式*/
+            flex: 1; /*给每一元素添加 扩大点击范围*/
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            background: white;
+            color: #000000;
+        }
+        .nav-bar a.active {
+            color: #42a5f3;
+            border-bottom: 1px solid #42a5f3;
+        }
+        .nav-bar a p {
+            width: 100%;
+            height: 20px;
+            text-align: center;
+        }
+        .news ul {
+            padding: 0;
+        }
+        .news li {
+            position: relative;
+            overflow: hidden;
+            padding: 5px;
+            border-bottom: 1px solid lightgray;
+        }
+        .news li span {
+            display: none;
+        }
+        .news li:hover span {
+            display: inline;
+            position: absolute;
+            top: 0;
+            right: 2px;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 12px;
+            background: #ececec;
+        }
+        .news .news_content {
+            width: 60%;
+            height: 85%;
+            margin: 2.5%;
+            float: left;
+        }
+        .news .news_content p {
+            line-height: 27px;
+            margin-top: 10px;
+        }
+        .news img {
+            float: right;
+            width: 25%;
+            position: relative;
+        }
+        .footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 4;
+        }
+        .footer .fonav {
+            /*补充样式*/
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: 12px;
+            background: white;
+            border-top: 1px solid #EEEDED;
+        }
+        .footer .footer-title {
+            /*补充样式*/
+            flex: 1;
+            display: inline-block;
+            color: #444444;
+            padding: 30px 0 0 0;
+        }
+        .footer .footer0 {
+            background: url(img/h1.png)no-repeat center 3px;
+            background-size: 25px 25px;
+        }
+        .footer .footer1 {
+            background: url(img/h2.png)no-repeat center 3px;
+            background-size: 25px 25px;
+        }
+        .footer .footer2 {
+            background: url(img/h3.png)no-repeat center 3px;
+            background-size: 25px 25px;
+        }
+        .footer .footer3 {
+            background: url(img/h4.png)no-repeat center 3px;
+            background-size: 25px 25px;
+        }
+    </style>
+    <script>
+        if(!localStorage.getItem('name')){
+            alert('请重新登录')
+            location.href='登录.html'
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>创业平台</h1>
+</header>
+<div id="banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="img/banner1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/banner2.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/banner3.png" alt="">
+        </div>
+        <section class="banner-action">
+            <div class="buttons">
+                <div class="swiper-button-prev"><</div>
+                <div class="swiper-button-next">></div>
+            </div>
+        </section>
+    </div>
+    <ul class="count" style="display:none;">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+<div id="content">
+    <nav>
+        <a href="#">
+            <img src="img/nav3.png">
+            <p>团队帮扶</p>
+        </a>
+        <a href="#">
+            <img src="img/nav1.png">
+            <p>创业加盟</p>
+        </a>
+        <a href="#">
+            <img src="img/nav4.png">
+            <p>FCO中心</p>
+        </a>
+        <a href="#">
+            <img src="img/nav2.png">
+            <p>购物中心</p>
+        </a>
+    </nav>
+    <div class="nav-bar">
+        <a href="javascript:"  class="nav-anchor active" data-type="1">
+            <p>平台时讯</p>
+        </a>
+        <a href="javascript:"  class="nav-anchor" data-type="2">
+            <p>创业经验</p>
+        </a>
+        <a href="javascript:"  class="nav-anchor" data-type="3">
+            <p>优质加盟</p>
+        </a>
+    </div>
+    <div class="news">
+        <ul id="news">
+        </ul>
+    </div>
+</div>
+<footer class="footer">
+    <div class="fonav">
+        <a class="footer-title footer0 " href="./home.html">
+            首页 </a>
+        <a class="footer-title footer1 " href="./wallet.html">
+            钱包 </a>
+        <a class="footer-title footer2 " href="./market.html">
+            交易 </a>
+        <a class="footer-title footer3 " href="mine.html">
+            我的 </a>
+    </div>
+</footer>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        // 记录当前显示的图片的索引
+        var current=0;
+        // 保存定时器
+        var timer=null;
+        timer=setInterval(autoPlay,3000)
+        // 自动播放
+        function autoPlay(){
+            current<$('.count li').length-1?current++:current=0;
+            show()
+        }
+        function show(){
+            // aLi.hide()
+            $('.swiper-slide').hide().eq(current).show();
+        }
+        // 按钮控制选图
+        $('.swiper-button-prev').click(function(){
+            current>0?current--:current=2;
+            show()
+        })
+        $('.swiper-button-next').click(function(){
+            current<$('.count li').length-1?current++:current=0;
+            show()
+        })
+        // 鼠标进图自动暂停
+        $('#banner').hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer = setInterval(autoPlay,3000);
+        })
+        //切换tab
+
+        $(".nav-bar a").click(function (e) {
+            $(".nav-bar a").removeClass('active')
+            $a=$(e.currentTarget)
+            $a.addClass('active')
+            loadDate($a.data("type"))
+        })
+        loadDate(1)
+
+        function loadDate(type) {
+            $.ajax({
+                url:'http://www.678mob.com/news.php?method=list',
+                type:'POST',
+                dataType:'json',
+                data:{
+                    type:type
+               },
+                success:function (res) {
+                    var data=res.data
+                    var Is = $('#news')
+                    var content = ''
+                    for (var i in data) {
+                        content += '<li>\n' +
+                            '                <div class="news_content">\n' +
+                            '                    <h4>' + data[i].title + '</h4>\n' +
+                            '                    <p>' + data[i].time + '</p>\n' +
+                            '                </div>\n' +
+                            '                <img src="img/' + data[i].img + '">\n' +
+                            '              <span data-id="'+data[i].id+'">X</span>'
+                        '            </li>'
+                    }
+                    Is.html(content);
+                },
+                error:function (res) {
+                    console.log(res)
+                }
+            })
+
+
+        }
+ //删除 方法二
+// $("#news").on("click","span",(function () {//动态绑定事件
+//     this.parentNode.remove()
+//         })
+// )
+
+//删除，事件委托
+$("#news").delegate("span","click",function (e) {
+
+    var a=$(e.currentTarget)
+    var id=a.data("id")
+
+    $.ajax({
+        url:'http://www.678mob.com/news.php?method=delItem',
+        type:'POST',
+        dataType:'json',
+        data:{
+            id:id
+        },
+        success:function (res) {
+            if (res.code==200){
+                e.target.parentNode.remove();
+            }
+        },
+        error:function (res) {
+            console.log(res)
+        }
+
+    })
+
+
+
+})
+
+    })
+</script>
+</html>
