@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            height: 40px;
+            background: #0099FF;
+            color: white;
+        }
+        header h1{
+            margin-top: 0;
+            text-align: center;
+            padding-top: 6px;
+            font-size: 20px;
+        }
+        #content{
+            padding: 10px;
+        }
+        #content input{
+            width: 100%;
+            padding: 10px;
+            background: #f3f3f3;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #content input[type=button],#content input[type=submit]{
+            margin-top: 10px;
+            background: #0099FF;
+            color: white;
+        }
+        .hint{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+<header>
+    <h1>登录</h1>
+</header>
+<div id="content">
+    <h4>我要登陆</h4>
+    <form action="main.html" method="post">
+        <div>
+            <label for="myname">姓名</label>
+            <input  type="text" placeholder="请输入姓名" id="myname">
+        </div>
+        <div>
+            <label for="mypwd" >密码</label>
+            <input type="password" placeholder="请输入密码" id="mypwd">
+        </div>
+        <input name="submit" type="button" value="登录" id="checkl">
+    </form>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myname').keyup(function (e) {
+                validateUser($(e.target).val())
+
+            } )
+
+
+            function doLogin(username, password) {
+                // if (username != 'admin') {
+                //     return '用户名错误'
+                // } else if (password != '123') {
+                //     return '密码错误'
+                // }
+                $.ajax({
+                   url: 'http://www.678mob.com/login.php',
+                    type:'POST',
+                    dataType:'json',
+                    data:{
+                        username:username,
+                        password:password
+                    },
+                    success:function (res) {
+                        console.log(res)
+                            if (res.code==200){
+                                location.href = 'main.html';
+                                localStorage.setItem('name', 'web2');
+                            }else{
+                                showError(res.message)
+                            }
+
+                    },
+                    error:function (res) {
+                        console.log(res)
+                    }
+
+                })
+            }
+
+            $('#checkl').click(function () {
+                var username = $("#myname").val();
+                var pwd = $("#mypwd").val();
+
+                validateUser(username, pwd)
+            })
+
+
+            function validateUser(username, pwd) {
+                //去除首尾空格
+                username.trim();
+                //验证
+                // username.replace(/(^\s*)|(\s*$)/g, "");
+                var error = '';
+                var regl = /^[A-z]/;
+                var regl1 = /^[A-z]\S{2,9}$/
+                if (!username) {
+                    error = '请输入用户名'
+                } else if (!regl.test(username)) {
+                    error = '请以字母开头'
+                } else if (!regl1.test(username)) {
+                    error = '请输入3-10位的非空字符'
+                } else if (!pwd) {
+                    error = '请输入密码'
+                }
+                //验证内容
+                if (!error) {
+                    error = doLogin(username, pwd);
+                }else {
+                    showError(error)
+                }
+
+            }
+            function showError(error) {
+                //显示结果
+                //  去除上次的内容
+                var old = $('.hint').text('')
+                if (error) {
+                    var a = $("<p></p>").html(error).addClass('hint')
+                    $("form").after(a);
+                }
+            }
+        })
+    </script>
+</div>
+</body>
+</html>
