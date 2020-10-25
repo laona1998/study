@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <ul id="mytab" class="nav nav-tabs">
+            <li class="active"><a href="">home</a></li>
+            <li><a href="">Hello</a></li>
+            <li><a href="">Web</a></li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $('#mytab a').click(function(e){
+        e.preventDefault();
+        $(this).tab("show");
+    })
+</script>
+</html>
