@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+    const o=document.querySelector('.box')
+    let id=1
+    let name='张三'
+    //模板字符串 用 ``插入变量用$(变量名)
+    let htmlTel = `<ul>
+    <oi>
+        <p>id:${id}</p>
+        <p>name:${name}</p>
+    </oi>
+</ul>`;
+    o.innerHTML=htmlTel
+
+
+
+    console.log(`Hello World`)
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//Iterator:是一种遍历机制
+/*两个核心
+* 1.迭代器是一个接口，能快捷的访问数据，通过Symbol.iterator来创建迭代器，用next()获取迭代后的结果
+* 2.用于遍历数据结构的指针（数据库的游标）
+* */
+  const items=['one','two','three']
+
+  const ite=items[Symbol.iterator]();
+  console.log(ite.next())
+  console.log(ite.next())
+  console.log(ite.next())
+  console.log(ite.next())
+
+</script>
+</body>
+</html>

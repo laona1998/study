@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//Promise.resolve():能将现有的任何对象转换成promise对象
+    let p=Promise.resolve('Hello');
+//let p=new Promise(resolve=>resolve("Hello"));
+
+    p.then((data)=>{
+        console.log(data)
+    })
+
+//Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
+//         const p = Promise.reject('出错了');
+//         // 等同于
+//         const p = new Promise((resolve, reject) => reject('出错了'))
+//
+//         p.then(null, function (s) {
+//             console.log(s)
+//         });
+//         // 出错了
+
+//race() 某个异步请求设置超时时间，并且在超时后执行相应操作
+
+//请求图片资源
+    function requestImg(imgSrc) {
+        return new Promise((resolve,reject)=>{
+           const img=new Image();
+           img.onload=function () {
+               resolve(img);
+           }
+           img.src=imgSrc;
+        });
+    }
+
+    function timeout() {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                reject(new Error('图片请求超时'));
+                // reject('图片请求超时');
+            },2000);
+        } )
+    }
+    Promise.race([requestImg('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604485069817&di=d6bb709fb5a65d6b75d2aef68cc814fc&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110320%2F11032021067b907d3ed754dd93.jpg'),timeout()]).then(data=>{
+        console.log(data);
+        document.body.appendChild(data);
+    }).catch(err=>{
+        console.log(err)
+    })
+
+
+</script>
+</html>

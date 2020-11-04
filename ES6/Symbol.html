@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //原始数据类型，Symbol 表示独一无二的值
+    const name=Symbol('name')
+    const name1=Symbol('name')
+    console.log(name===name1)
+
+    //用于定义对象的私有变量
+    let s1=Symbol('s1')
+    let obj={
+        [s1]:'小马哥'
+    }
+    //取值时用[变量名]
+    console.log(obj[s1])
+
+
+</script>
+</html>

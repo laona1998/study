@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const getJSON = function(url) {
+        const promise = new Promise(function(resolve, reject){
+            const handler = function() {
+                if (this.readyState !== 4) {//4表示数据接收完成
+                    return;
+                }
+                if (this.status === 200) {//200表示成功
+                    resolve(this.response);
+                } else {
+                    reject(new Error(this.statusText));
+                }
+            };
+            const client = new XMLHttpRequest();
+            client.open("GET", url);
+            client.onreadystatechange = handler;
+            client.responseType = "json";
+            client.setRequestHeader("Accept", "application/json");
+            client.send();//发送
+
+        });
+        return promise;
+    };
+
+    getJSON("/posts.json").then(function(json) {
+        console.log('Contents: ' + json);
+    }, function(error) {
+        console.error('出错了', error);
+    });
+
+    //then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。
+    // 其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
+</script>
+</body>
+</html>

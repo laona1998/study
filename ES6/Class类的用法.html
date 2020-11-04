@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //es5造类
+    // function Person(name,age) {
+    //     this.name=name;
+    //     this.age=age;
+    // }
+    // Person.prototype.sayName=function () {
+    //     return this.name;
+    // }
+    // Person.prototype.sayAge=function () {
+    //     return this.age;
+    // }
+
+//es6
+    class Person{
+        //实例化后立即被调用
+        constructor(name,age){
+             this.name=name;
+                this.age=age;
+        }
+        sayName(){
+             return this.name;
+        }
+        sayAge(){
+             return this.age;
+        }
+
+    }
+    let p1=new Person("张三",11);
+    console.log(p1.name);
+    console.log(p1.age);
+
+
+</script>
+</body>
+</html>

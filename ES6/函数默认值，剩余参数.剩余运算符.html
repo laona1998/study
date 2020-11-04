@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //函数默认值
+    function log(x, y = 'World') {
+        console.log(x, y);
+    }
+    log('Hello') // Hello World
+    log('Hello', 'China') // Hello China
+    log('Hello', '') // Hello
+
+//剩余运算符：将多个独立的合并到一个数组中。  一般用在函数的形参上
+//扩展运算符：将一个数组分割，并将其传给函数。 针对数组进行分割
+
+//剩余参数解决了arguments的问题
+    function add(...values) {
+
+        let sum = 0;
+
+        for (var val of values) {
+            sum += val;
+        }
+
+        return sum;
+    }
+    console.log(add(2, 5, 3)) // 10
+
+//扩展运算符
+const [a,...b]=[1,2,3]
+    a // 1
+    b // [2, 3]
+//处理数组中的最大值
+    const arr=[10,20,50,60,80,100]
+    console.log(Math.max(...arr))
+
+
+</script>
+</html>

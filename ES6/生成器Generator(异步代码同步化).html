@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Generator函数：yield将函数挂起，为了改变执行流提供了可能，为异步编程提供了方案
+
+    /*形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；
+    二是，函数体内部使用yield表达式，定义不同的内部状态（yield在英语里的意思就是“产出”）。*/
+function* func() {
+    console.log("one")
+    yield 2;
+    console.log("two")
+    yield 3;
+    console.log("three")
+}
+//返回一个遍历器对象,可以调用next();
+    let fn=func();
+
+    console.log(fn.next())//{value:'2',done:false}
+    console.log(fn.next())//{value:'2',done:false}
+    console.log(fn.next())//{value:undefined,done:true}
+
+    //总结：generator函数是分段执行的，yield语句暂停执行，next()恢复执行
+
+    //应用
+//加载Loading...页面
+//数据加载完成
+//关闭Loading...页面
+    function* load() {
+        loadUI();
+        yield showData();
+        hideUI();
+    }
+    //创建迭代器
+    let itLoad=load();
+    itLoad.next();//执行showData
+    function loadUI() {
+        console.log("加载Loading...页面");
+    }
+    function showData() {
+        //模拟异步操作
+        setTimeout(()=>{
+            console.log('数据加载完成')
+            itLoad.next();//执行hideUI()
+        },1000);
+    }
+    function hideUI() {
+        console.log('关闭Loading...页面')
+    }
+    
+    
+</script>
+</body>
+</html>

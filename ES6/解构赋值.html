@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //针对数组对象进行操作
+    //优点：代码书写上简洁易读
+
+    //完全解构
+    let node={
+        name:"张三",
+        age:11
+    }
+    //let name=node.name;
+    //let age=node.age;
+
+    let {name,age}=node
+    console.log(name,age)
+
+
+    let obj={
+        a:{
+            name:"张三"
+        },
+        b:[],
+        c:'Hello World'
+    }
+    //不完全解构
+    // let {a}=obj;
+    // console.log(a)
+    // let {a,...res}=obj
+    // console.log(a,res)
+
+//    对数组解构
+    let arr=[1,2,3]
+    let [a,b,c]=arr
+    console.log(a,b,c)
+
+</script>
+</html>

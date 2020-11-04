@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</body>
+<script>
+    //from 类似数组的对象，Array.from将它转为真正的数组。
+    let arrayLike = {
+        '0': 'a',
+        '1': 'b',
+        '2': 'c',
+        length: 3
+    };
+
+    // ES5的写法
+    var arr1 = [].slice.call(arrayLike); // ['a', 'b', 'c']
+
+    // ES6的写法
+    let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
+
+    let lis=document.querySelectorAll('li')
+    // console.log(Array.from(lis))
+    console.log([...lis])
+
+    //Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
+    Array.from(arrayLike, x => x * x);
+    // 等同于
+    Array.from(arrayLike).map(x => x * x);
+    Array.from([1, 2, 3], (x) => x * x)
+    // [1, 4, 9]
+
+
+    //2.Array.of方法用于将任意数据类型，转换为数组
+    console.log(Array.of(3,11,[1,2,3],{id:3}))
+
+    //3.find（）找出第一个符合条件的数组乘员
+    let num=[1,2,-10,5,6,7,4].find(n=>n<0)
+    console.log(num);
+
+    //4.findIndex()找出找出第一个符合条件的数组乘员的索引
+    let num1=[1,2,-10,5,6,7,4].findIndex(n=>n<0)
+    console.log(num1);
+
+    //数组实例的 entries()，keys() 和 values()
+    // keys()是对键名的遍历、
+    // values()是对键值的遍历，
+    // entries()是对键值对的遍历。
+
+    for(let index of['a','b'].keys()){
+        console.log(index);//0,1
+    }
+    for (let elem of['a','b'].values()){
+        console.log(elem);//a,b
+    }
+    for (let [index,elem] of['a','b'].entries()){
+        console.log(index,elem);
+        // 0 "a"
+        // 1 "b"
+    }
+    //不使用for of
+    let letter = ['a', 'b', 'c'];
+    let entries = letter.entries();
+    console.log(entries.next().value); // [0, 'a']
+    console.log(entries.next().value); // [1, 'b']
+    console.log(entries.next().value); // [2, 'c']
+
+    // includes()返回一个布尔值，表示某个数组是否包含给定的值，
+        [1, 2, 3].includes(2)     // true
+        [1, 2, 3].includes(4)     // false
+        [1, 2, NaN].includes(NaN) // true
+</script>
+</html>

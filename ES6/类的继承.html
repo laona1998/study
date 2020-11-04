@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal{
+        //实例化后立即被调用
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        sayName(){
+            return this.name;
+        }
+        sayAge(){
+            return this.age;
+        }
+    }
+
+    class Dog extends Animal{
+        constructor(name,age,color) {
+            super(name,age);
+            this.color=color;
+        }
+        //子类自己的方法
+        sayColor() {
+            return `${this.name}是${this.age}岁了，它的颜色是${this.color}`;
+        }
+        //重写父类方法·
+        sayName() {
+            return this.name+ super.sayAge()+this.color;
+        }
+    }
+    let d1=new Dog("小黄",28,"red");
+    console.log(d1.sayColor())
+    console.log(d1.sayName())
+
+</script>
+</body>
+</html>
