@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //es6直接写入变量和函数，作为对象的属性和方法
+    const name="张三",age=11
+    const person={
+        name,//等价于 name:name
+        age,
+        sayName(){
+            console.log(this.name)
+        }
+    }
+    person.sayName();
+
+    function fn(x,y) {
+        return {x,y}
+    }
+    console.log(fn(10,20))
+
+
+    //对象的方法
+    //is() === 比较两个值是否严格相等
+    console.log(Object.is(NaN,NaN))
+
+    //assign(): 对象合并
+
+    //浅克隆
+    let  o= Object.assign({},{a:1},{b:2})
+    console.log(o)
+</script>
+
+
+</html>

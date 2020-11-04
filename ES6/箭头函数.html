@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+<!--    两个参数-->
+    let fn=(a,b) => a+b
+    console.log(fn(1,2))
+    //无参数
+    let fn1=()=>"Hello World"
+    console.log(fn1())
+    //对象
+    const getObj = id =>({id:id,name:"小马哥"})
+    let obj=getObj(1)
+    console.log(obj)
+
+const isEven = n => n % 2 == 0;
+const square = n => n * n;
+console.log(isEven(10))
+console.log(square(10))
+
+// 回调函数
+console.log( [1,2,3].map(x => x * x))
+
+</script>
+</html>

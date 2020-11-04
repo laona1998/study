@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //作用：使用异步操作更加方便
+    //基本操作 async会返回一个Promise对象 then catch
+
+    async function f() {
+        throw new Error('出错了');
+    }
+
+    f().then(
+        v => console.log('resolve', v),
+        e => console.log('reject', e)
+    )
+
+
+    //错误处理
+    async function f() {
+        await new Promise(function (resolve, reject) {
+            throw new Error('出错了');
+        });
+    }
+
+    f()
+        .then(v => console.log(v))
+        .catch(e => console.log(e))
+    // Error：出错了
+
+    //指定多少毫秒后输出一个值。
+    // function timeout(ms) {
+    //     return new Promise((resolve) => {
+    //         setTimeout(resolve, ms);
+    //     });
+    // }
+    //
+    // async function asyncPrint(value, ms) {
+    //     await timeout(ms);
+    //     console.log(value);
+    // }
+    // asyncPrint('hello world', 5000);
+
+    //也可以是
+    // async function timeout(ms) {
+    //     await new Promise((resolve) => {
+    //         setTimeout(resolve, ms);
+    //     });
+    // }
+    //
+    // async function asyncPrint(value, ms) {
+    //     await timeout(ms);
+    //     console.log(value);
+    // }
+    //
+    // asyncPrint('hello world', 50);
+
+
+//    await 命令
+//     async function f() {
+//         // 等同于
+//         // return 123;
+//         return await 123;
+//     }
+//
+//     f().then(v => console.log(v))
+//     // 123
+
+</script>
+</body>
+</html>
