@@ -1,0 +1,94 @@
+{
+    "code": 0,
+    "message": "查询成功",
+    "data": [
+        {
+            "id": "1002",
+            "username": "lao",
+            "password": "111",
+            "name": "老王",
+            "age": "21",
+            "icon": "p2.png",
+            "type": "2",
+            "birthday": "2020-11-05",
+            "creat_time": null
+        },
+        {
+            "id": "1003",
+            "username": "zhangsan",
+            "password": "111",
+            "name": "张三",
+            "age": "18",
+            "icon": "p3.png",
+            "type": "3",
+            "birthday": "2020-11-10",
+            "creat_time": null
+        },
+        {
+            "id": "1029",
+            "username": null,
+            "password": null,
+            "name": "小刘",
+            "age": "12",
+            "icon": "p4.jpg",
+            "type": "2",
+            "birthday": "2020-11-11",
+            "creat_time": null
+        },
+        {
+            "id": "1035",
+            "username": null,
+            "password": null,
+            "name": "张三",
+            "age": "16",
+            "icon": "p4.jpg",
+            "type": "3",
+            "birthday": "2020-11-12",
+            "creat_time": null
+        },
+        {
+            "id": "1041",
+            "username": null,
+            "password": null,
+            "name": "小",
+            "age": "111",
+            "icon": "p5.jpg",
+            "type": "2",
+            "birthday": "2020-11-04",
+            "creat_time": null
+        },
+        {
+            "id": "1044",
+            "username": null,
+            "password": null,
+            "name": "小明",
+            "age": "12",
+            "icon": "p6.jpg",
+            "type": "3",
+            "birthday": "2020-11-02",
+            "creat_time": "0"
+        },
+        {
+            "id": "1049",
+            "username": null,
+            "password": null,
+            "name": "小红",
+            "age": "18",
+            "icon": "p4.jpg",
+            "type": "2",
+            "birthday": "2020-11-11",
+            "creat_time": "2020"
+        },
+        {
+            "id": "1082",
+            "username": null,
+            "password": null,
+            "name": "多少",
+            "age": "111",
+            "icon": "p4.jpg",
+            "type": "2",
+            "birthday": "2020-11-10",
+            "creat_time": "2020"
+        }
+    ]
+}
