@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/echarts.min.js"></script>
+    <!-- 引入 vintage 主题 -->
+    <script src="js/vintage.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    //// 第二个参数可以指定前面引入的主题
+    var myChart = echarts.init(document.getElementById('main'),'vintage');
+    var labelRight = {
+        position: 'right'
+    };
+    option = {
+        //设置线条颜色
+        // color: ['blue'],
+
+        //设置图表标题
+        title: {
+            text: '折线图堆叠'
+        },
+        //图表提示框组件
+        tooltip: {
+            //触发方式
+            trigger: 'axis'
+        },
+        //图例组件
+        legend: {
+            //series里有name,则legend里的data可以删掉
+            data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        //网格配置，控制大小
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            //显示刻度标签
+            containLabel: true
+        },
+        //工具箱组件，将图表保存为图片等功能
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        //设置x轴的相关配置
+        xAxis: {
+            type: 'category',
+            //线条与坐标轴是否有缝隙
+            boundaryGap: false,
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        //系列图表，决定显示那种类型的图表
+        series: [
+            {
+                name: '邮件营销',
+                type: 'line',
+
+                data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name: '联盟广告',
+                type: 'line',
+
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '视频广告',
+                type: 'line',
+
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '直接访问',
+                type: 'line',
+
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '搜索引擎',
+                type: 'line',
+
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

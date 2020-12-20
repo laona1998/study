@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Ajax Test</title>
+    <script src="echarts.min.js"></script>
+    <script src="jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<h1>PHP Ajax ECahrts 测试</h1>
+<hr>
+<div id="container" style="width: 600px; height: 400px;"></div>
+<script>
+
+    // 初始化两个数组，盛装从数据库中获取到的数据
+    var names = [], ages = [];
+
+    //调用ajax来实现异步的加载数据
+    function getusers() {
+        $.ajax({
+            type: "post",
+            async: false, //异步执行
+            url: "test.php",//SQL数据库文件
+            data: {},//发送给数据库的数据
+            dataType: "json", //json类型
+            success: function(result){
+                if(result){
+                    for(var i = 0 ; i < result.length; i++){
+                        names.push(result[i].username);
+                        ages.push(result[i].age);
+                        // console.log(result[i].username)
+                    }
+                }
+            },
+            error: function(ero) {
+                alert("Ajax获取服务器数据出错了！"+ ero);
+            }
+        });
+        return names, ages;
+    }
+
+    // 执行异步请求
+    getusers();
+
+
+    // 初始化 图表对象
+    var mychart = echarts.init(document.getElementById("container"));
+    // 进行相关项的设置，也就是所谓的搭搭骨架，方便待会的ajax异步的数据填充
+    var option = {
+        title : {
+            text : '姓名年龄分布图'
+        },
+        tooltip : {
+            show : true
+        },
+        legend : {
+            data : [ 'age' ]
+        },
+        xAxis : [ {
+            type : 'category',
+            data : names
+        } ],
+        yAxis : [ {
+            type : 'value'
+        } ],
+        series : [ {
+            "name" : "age",
+            "type" : "bar",
+            "data" : ages
+        } ]
+    };
+
+    // 将配置项赋给chart对象，来显示相关的数据
+    mychart.setOption(option);
+
+</script>
+<marquee>调用成功</marquee>
+
+</body>
+</html>
