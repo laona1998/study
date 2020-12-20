@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+获取验证码
+
+<form action="uploads/getverifycode.php" method="post">
+    <input type="text"name="telephone">
+    <input type="submit" value="获取验证码">
+</form>
+
+</br>
+</br>
+
+登录
+<form action="uploads/login.php" method="post">
+    手机号:
+    <input type="text" name="username"/><br>
+    密码:
+    <input type="password" name="pwd"/><br>
+    <input type="submit" value="登录">
+</form>
+
+</br>
+</br>
+
+注册
+<form action="uploads/register.php" method="post">
+    手机号:
+    <input type="text" name="username"/><br>
+    验证码:
+    <input type="text" name="verifyCode"/><br>
+    密码:
+    <input type="password" name="pwd"/><br>
+    <input type="submit" value="注册">
+</form>
+
+</br>
+</br>
+<a href="uploads/notices.php?type=0">获取个人公告</a>
+<a href="uploads/notices.php?type=1">获取社区公告</a>
+
+</br>
+</br>
+
+获取活动列表</br>
+<a href="uploads/activities.php?type=list&userid=1">获取活动列表</a>
+
+</br>
+</br>
+
+参与活动<br>
+<!--<a href="uploads/activities.php?type=participate&userid=1001&token=a562af39ee19a74e&activityid=2">参与活动</a>-->
+<a href="uploads/activities.php?type=participate&userid=1001&token=a562af39ee19a74e&activityid=2">参与活动</a>
+
+
+</body>
+
+
+</html>
